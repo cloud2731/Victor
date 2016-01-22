@@ -20,6 +20,7 @@
 
 #include <GetArg.h>
 #include <PdbLoader.h>
+#include <Eigen/Core>
 #include <StructurePdbSuperimposition.h>
 
 using namespace Victor;using namespace Victor::Biopool;
@@ -29,13 +30,13 @@ void sShowHelp() {
     cout << "Pdb Superimposition -- calculate the superimposition scores (RMSD/MaxSub/GDT_TS/TM) of two pdb files\n"
         << "Options: \n"
         << "\t-i <filename> <filename>, \t Input PDB filename\n"
-        << "\t-r, \t Calculate only RMSD score\n"
-        << "\t-m, \t Calculate only MaxSub score\n"
-        << "\t-g, \t Calculate only GDT_TS score\n"
-        << "\t-t, \t Calculate only TM score\n"
-        << "\t-L <seed_size>, is a integer number for the initial seeds lenght of MaxSub\n"
+        << "\t[-r], \t Calculate only RMSD score\n"
+        << "\t[-m], \t Calculate only MaxSub score\n"
+        << "\t[-g], \t Calculate only GDT_TS score\n"
+        << "\t[-t], \t Calculate only TM score\n"
+        << "\t[-L <seed>], is a integer number for the initial seeds lenght of MaxSub\n"
 	<< "\t\t used by MaxSub, GDT_TS, TM-Score (default is 4)\n"
-	<< "\t-d <threshold>, is a double number for the threshold of MaxSub (default is 3.5A)\n"
+	<< "\t[-d <threshold>], is a double number for the threshold of MaxSub (default is 3.5A)\n"
 	<< "Usage: \n"
 	<< "\tPdbSuperimposition -i <file_name> <file_name> [-<char_score>] [-L <integer_seed>] [-d <double_threshold>]\n";
 }

@@ -67,8 +67,8 @@ public:
 		sp2 = prot2.getSpacer(chainsIdProt2[0]);
 		
 		Eigen::MatrixX3d matrix1, matrix2;
-		matrix1 = StructurePdbSuperimposition::FromSpacerToEigenMatrix(sp1);
-		matrix2 = StructurePdbSuperimposition::FromSpacerToEigenMatrix(sp2);
+		matrix1 = StructurePdbSuperimposition::fromSpacerToEigenMatrix(sp1);
+		matrix2 = StructurePdbSuperimposition::fromSpacerToEigenMatrix(sp2);
 
 		double result[4];
 
